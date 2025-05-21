@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = { basePath: "/dictionary" };
+const nextConfig: NextConfig = {};
 
 export default nextConfig;
