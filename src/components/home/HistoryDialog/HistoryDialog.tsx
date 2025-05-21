@@ -2,24 +2,28 @@
 
 import { CustomButton } from "@/components";
 import { CustomDialog } from "@/components/shared/CustomDialog/CustomDialog";
-import { closeModal } from "@/store/searchSlice";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/store/store";
-import { useDispatch, useSelector } from "react-redux";
+import { closeModal } from "@/store/searchSlice";
 
 export const HistoryDialog = () => {
-  const dispatch = useDispatch();
   const { selectedHistory } = useSelector((state: RootState) => state.search);
+  const dispatch = useDispatch();
 
   return (
     <CustomDialog>
-      <section className="flex flex-col gap-4 ">
-        <h2 className="text-lg font-bold">Search history</h2>
-        <p>
-          Searched word:
-          <span className="font-semibold">{selectedHistory?.word}</span>
-        </p>
-        <p className="mt-2 text-sm">{`Search datetime: ${selectedHistory?.date}`}</p>
-        <div className="mt-2 flex justify-end gap-2">
+      <section className="flex flex-col gap-6">
+        <h2 className="text-xl font-semibold text-center">Search History</h2>
+        <div className="space-y-2">
+          <p>
+            <span className="font-medium">Word:</span>{" "}
+            <span className="font-semibold">{selectedHistory?.word}</span>
+          </p>
+          <p className="text-sm text-gray-600 dark:text-gray-300">
+            <span className="font-medium">Date:</span> {selectedHistory?.date}
+          </p>
+        </div>
+        <div className="flex justify-end">
           <CustomButton
             className="rounded-lg"
             variant="text"
