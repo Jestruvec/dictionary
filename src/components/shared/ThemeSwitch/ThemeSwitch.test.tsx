@@ -4,14 +4,6 @@ import { ThemeSwitch } from "./ThemeSwitch";
 import { describe, it, expect, beforeEach, vi, Mock } from "vitest";
 import { storageService } from "@/services/storageService";
 
-vi.mock("@/services/storageService", () => ({
-  storageService: {
-    getItem: vi.fn(),
-    setItem: vi.fn(),
-    removeItem: vi.fn(),
-  },
-}));
-
 const mockedStorageService = storageService as {
   getItem: Mock;
   setItem: Mock;
