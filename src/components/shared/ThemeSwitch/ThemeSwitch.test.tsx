@@ -4,7 +4,6 @@ import { ThemeSwitch } from "./ThemeSwitch";
 import { describe, it, expect, beforeEach, vi, Mock } from "vitest";
 import { storageService } from "@/services/storageService";
 
-// Mock de storageService
 vi.mock("@/services/storageService", () => ({
   storageService: {
     getItem: vi.fn(),
@@ -13,7 +12,6 @@ vi.mock("@/services/storageService", () => ({
   },
 }));
 
-// Tipo seguro para el mock
 const mockedStorageService = storageService as {
   getItem: Mock;
   setItem: Mock;
@@ -25,15 +23,14 @@ vi.mock("react-icons/pi", () => ({
   PiSunThin: () => <div data-testid="sun-icon">Sun</div>,
 }));
 
-// Mock de matchMedia
 Object.defineProperty(window, "matchMedia", {
   writable: true,
   value: vi.fn().mockImplementation((query) => ({
     matches: false,
     media: query,
     onchange: null,
-    addListener: vi.fn(), // deprecated
-    removeListener: vi.fn(), // deprecated
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
     addEventListener: vi.fn(),
     removeEventListener: vi.fn(),
     dispatchEvent: vi.fn(),
