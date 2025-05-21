@@ -21,7 +21,7 @@ const Home = () => {
     <section className="px-4 pb-20">
       {showModal && <HistoryDialog />}
 
-      <header className="mt-2">
+      <header className="my-2">
         <SearchBar />
         <HistoryCard />
       </header>
