@@ -15,7 +15,7 @@ export const SearchBar = () => {
     (state: RootState) => state.search
   );
   const { fetchEntry } = useDictionary();
-  const wordToType = "Welcome";
+  const wordToType = "welcome";
   const [isWritingWordToType, setIsWritingWordToType] = useState(true);
   const debouncedSearchRef =
     useRef<DebouncedFunction<(query: string) => void>>(null);
