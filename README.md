@@ -29,6 +29,14 @@ Esta es una aplicación web construida con **Next.js** que permite buscar palabr
 
 ---
 
+## 🚀 Despliegue
+
+Puedes acceder al proyecto desplegado en GitHub Pages desde el siguiente enlace:
+
+[https://dictionary-blush-five.vercel.app/](https://dictionary-blush-five.vercel.app/)
+
+---
+
 ## 🛠️ Instalación
 
 1. **Clona el repositorio:**
