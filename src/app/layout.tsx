@@ -35,7 +35,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${merriweather.variable} antialiased dark:bg-gray-800 dark:text-white`}
       >
         <ReduxProvider>
-          <div className="grid grid-rows-[auto_1fr] min-h-screen max-w-7xl mx-auto">
+          <div className="grid grid-rows-[auto_1fr] min-h-screen max-w-2xl mx-auto">
             <LayoutHeader />
             <main className="overflow-auto">{children}</main>
           </div>
