@@ -5,7 +5,6 @@ export interface SearchState {
   showModal: boolean;
   entry: DictionaryEntry[];
   searchHistory: SearchHistory[];
-  selectedHistory: SearchHistory | null;
   searchQuery: string;
   loading: boolean;
   error: string | null;
@@ -16,7 +15,6 @@ const initialState: SearchState = {
   searchQuery: "",
   entry: [],
   searchHistory: [],
-  selectedHistory: null,
   loading: false,
   error: null,
 };
@@ -25,19 +23,11 @@ export const searchSlice = createSlice({
   name: "search",
   initialState,
   reducers: {
-    openModal: (state, action: PayloadAction<SearchHistory>) => {
-      state.selectedHistory = action.payload;
+    openModal: (state) => {
       state.showModal = true;
     },
     closeModal: (state) => {
-      state.selectedHistory = null;
       state.showModal = false;
-    },
-    setSelectedHistory: (state, action: PayloadAction<SearchHistory>) => {
-      state.selectedHistory = action.payload;
-    },
-    clearSelectedHistory: (state) => {
-      state.selectedHistory = null;
     },
     setSearchQuery: (state, action: PayloadAction<string>) => {
       state.searchQuery = action.payload;
@@ -76,8 +66,6 @@ export const {
   clearEntry,
   clearError,
   setSearchQuery,
-  setSelectedHistory,
-  clearSelectedHistory,
   openModal,
   closeModal,
 } = searchSlice.actions;
